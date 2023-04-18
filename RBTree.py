@@ -232,7 +232,7 @@ class RBTree:
         """
         after the while loop finishes, the current node should be the root of the tree
         """
-        node.color = BLACK # the root of the tree is always black
+        self.root.color = BLACK # the root of the tree is always black
 #__________________________________________________________________________________________________________________________________________________
     def print_height(self):
         """
@@ -241,8 +241,10 @@ class RBTree:
         def get_height(node):
             if node == self.null_node: # if the current node is the null node then the height is 0(empty tree)
                 return 0
+            
             left_height = get_height(node.left_child) # get the height of the left subtree
             right_height = get_height(node.right_child) # get the height of the right subtree
+
             return 1 + max(left_height, right_height) # return the height of the tree as 1 + the height of the longest subtree (left or right)
 
         print("Tree height: ", get_height(self.root))
