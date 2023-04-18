@@ -115,7 +115,7 @@ class RBTree:
                     node.parent.color = BLACK
                     node.parent.parent.color = RED
                     self.rotate_left(node.parent.parent)
-        node.color = BLACK
+        self.root.color = BLACK
 
     def print_height(self):
         def get_height(node):
